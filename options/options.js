@@ -2,7 +2,6 @@ const streamersList = document.getElementById('streamers');
 const addStreamerForm = document.getElementById('addStreamerForm');
 const addStreamerInput = document.getElementById('streamerInput');
 
-// Function to display the streamers on the options page
 function displayStreamers(streamers) {
   streamersList.innerHTML = '';
   for (let i = 0; i < streamers.length; i++) {
