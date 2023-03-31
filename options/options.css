@@ -1,0 +1,73 @@
+body {
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ padding: 0;
+ font-family: "Lucida Grande", Arial, "Noto Sans", monospace, sans-serif;
+ font-size: 13px;
+ color: #e0e0e0;
+ background-color: #24272c;
+ overflow: hidden;
+}
+
+#smash-all {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 80%;
+ height: 80%;
+ margin: auto;
+ flex-grow: 1;
+ overflow: hidden;
+}
+
+#logo-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 10px;
+}
+
+#logo-container img {
+ display: block;
+ margin: auto;
+ height: 20px;
+}
+
+ul {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ overflow: hidden;
+}
+
+#streamers {
+ height: auto;
+ overflow-y: scroll;
+}
+
+li {
+ margin: 2px 0;
+ padding: 5px;
+ cursor: pointer;
+ overflow: hidden;
+}
+
+div {
+ height: 15px;
+ overflow: hidden;
+}
+
+#streamers {
+ scrollbar-width: none; /* Firefox */
+ -ms-overflow-style: none; /* IE and Edge */
+}
+
+#streamers::-webkit-scrollbar {
+ display: none; /* WebKit */
+}
+
+button {
+ margin-right: 5px;
+}
