@@ -1,2 +1,6 @@
 # kicklive
-A chrome extension for Kick.com, where you can add the names of your streamers. You can see what your added streamers are playing, how many viewers they have and there is a badge on the extension displaying a number, the number represents how many of the people you have added that are currently live.
+A chrome extension to keep track of your favorite streamers on Kick.com.
+
+Right-clicking the extension icon gets you to "options", where you can add the usernames of the streamers on Kick. This way you will have all your favorite Kick streamers in one global browser space.
+
+The extension icon badge will display a number of how many of the streamers you have added to your list, that is currently online.
