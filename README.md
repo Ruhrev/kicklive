@@ -5,4 +5,4 @@ A dropdown display, showing your added favorite streamers, what category they ar
 
 Right-clicking the extension icon gets you to "options", where you can add the usernames of the streamers on Kick. This way you will have all your favorite Kick streamers in one global browser space.
 
-The extension icon badge will display a number of how many of the streamers you have added to your list, that is currently online. Which is a nice global indicator to have in your browser, as a small notification, telling you that one of your added streamers are currently streaming.
+The extension icon badge will display a number of how many of the streamers you have added to your list, that is currently online. Which is a nice global indicator to have in your browser, as a small notification, telling you if some of your added streamers are currently streaming.
