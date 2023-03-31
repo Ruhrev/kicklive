@@ -1,11 +1,9 @@
-// Create the context menu
 chrome.contextMenus.create({
  id: 'options',
  title: 'Options',
  contexts: ['browser_action']
 });
 
-// Listen for context menu clicks
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
  if (info.menuItemId === 'options') {
    chrome.tabs.create({ url: '../options/options.html' });
@@ -32,5 +30,4 @@ function updateBadgeText() {
 
 setInterval(updateBadgeText, 20000);
 
-// Call the updateBadgeText function once when the extension is first loaded
 updateBadgeText();

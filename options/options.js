@@ -9,7 +9,6 @@ function displayStreamers(streamers) {
     const streamerItem = document.createElement('li');
     streamerItem.textContent = streamer;
 
-    // Add minus sign to remove streamer
     const minusButton = document.createElement('button');
     minusButton.textContent = '-';
     minusButton.classList.add('minus-button');
@@ -23,13 +22,11 @@ function displayStreamers(streamers) {
   }
 }
 
-// Load the saved streamers from local storage and display them in the options page
 chrome.storage.local.get('streamers', function(result) {
   const streamers = result.streamers || [];
   displayStreamers(streamers);
 });
 
-// Add a new streamer to the list when the "Add" button is clicked
 addStreamerForm.addEventListener('submit', function(event) {
   event.preventDefault();
   const streamer = addStreamerInput.value.trim().toLowerCase();
@@ -64,7 +61,6 @@ addStreamerForm.addEventListener('submit', function(event) {
   }
 });
 
-// Function to remove a streamer from local storage
 function removeStreamer(streamer) {
   chrome.storage.local.get('streamers', function(result) {
     const streamers = result.streamers || [];
