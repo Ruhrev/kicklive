@@ -4,30 +4,37 @@ chrome.contextMenus.create({
  contexts: ['browser_action']
 });
 
-chrome.contextMenus.onClicked.addListener(function(info, tab) {
+chrome.contextMenus.onClicked.addListener(function (info, tab) {
  if (info.menuItemId === 'options') {
-   chrome.tabs.create({ url: '../options/options.html' });
+  chrome.tabs.create({ url: '../options/options.html' });
  }
 });
 
 function updateBadgeText() {
-  const streamersLive = [];
-  chrome.storage.local.get('streamers', function(result) {
-    const streamers = result.streamers || [];
-    for (const streamer of streamers) {
-      fetch(`https://kick.com/api/v1/channels/${streamer}`)
-        .then((response) => response.json())
-        .then(data => {
-          if (data.livestream !== null) {
-            streamersLive.push(streamer);
-          }
-          chrome.browserAction.setBadgeText({text: streamersLive.length.toString()});
-        })
-        .catch(error => console.error(error));
-    }
-  });
+ let streamersLive = [];
+ let streamerCount = 0;
+ chrome.storage.local.get('streamers', function (result) {
+  const streamers = result.streamers || [];
+  for (const streamer of streamers) {
+   fetch(`https://kick.com/api/v1/channels/${streamer}`)
+    .then((response) => response.json())
+    .then(data => {
+     if (data.livestream !== null) {
+      streamersLive.push(streamer);
+     } else {
+      return;
+     }
+    })
+    .catch(error => console.error(error));
+  }
+  setTimeout(function() {
+    streamerCount += streamersLive.length;
+    console.log(streamerCount)
+    chrome.browserAction.setBadgeText({ text: streamerCount.toString() });
+  }, 1000); // wait for 1 second for all fetch calls to complete
+ });
 }
 
-setInterval(updateBadgeText, 20000);
+setInterval(updateBadgeText, 60000);
 
 updateBadgeText();
