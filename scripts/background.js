@@ -29,9 +29,8 @@ function updateBadgeText() {
   }
   setTimeout(function() {
     streamerCount += streamersLive.length;
-    console.log(streamerCount)
     chrome.browserAction.setBadgeText({ text: streamerCount.toString() });
-  }, 2000); // wait for 1 second for all fetch calls to complete
+  }, 2000);
  });
 }
 

@@ -1,4 +1,3 @@
-
 let streamers = [];
 let streamersLive = [];
 let cachedData = {};
@@ -22,7 +21,6 @@ chrome.storage.local.get('streamers', function (result) {
 
 function createOrUpdateStreamerElement(channel, data) {
  let streamerElement = document.getElementById(channel);
- console.log(data)
  if (!streamerElement) {
   streamerElement = document.createElement('li');
   streamerElement.id = channel;
@@ -77,7 +75,7 @@ setInterval(() => {
     });
   }
  }
-}, 10000);
+}, 20000);
 
 function updateStreamerElement(channel, data) {
  const category = data.recent_categories[0].name.toUpperCase();
